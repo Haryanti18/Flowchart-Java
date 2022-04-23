@@ -1,0 +1,32 @@
+import java.util.*;
+import java.lang.Math;
+import java.util.Scanner;
+
+class JavaApplication {
+    private static Scanner input = new Scanner(System.in);
+    
+    public static void main(String[] args) {
+        int panjang, i, j;
+        
+        panjang = input.nextInt();
+        int[] nilai = new int[panjang];
+        
+        for (i = 0 ; i <= panjang - 1 ; i += 1) {
+            nilai[i] = input.nextInt();
+        }
+        for (i = 0 ; i <= panjang - 1 ; i += 1) {
+            for (j = 0 ; j <= panjang - 2 ; j += 1) {
+                if (nilai[j] > nilai[j + 1]) {
+                    int temp;
+                    
+                    temp = nilai[j];
+                    nilai[j] = nilai[j + 1];
+                    nilai[j + 1] = temp;
+                }
+            }
+        }
+        for (i = 0 ; i <= panjang - 1 ; i += 1) {
+            System.out.println(nilai[i]);
+        }
+    }
+}
